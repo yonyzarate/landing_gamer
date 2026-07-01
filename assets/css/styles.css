@@ -6,6 +6,8 @@
   --color-border-list: rgba(255, 255, 255, 0.3);
   --color-hover-sublist-item: rgba(0, 0, 0, 0.05);
   --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-bg-marquee: #eeeeee;
+  --color-text-marquee: #7c7c7c;
 }
 
 /* ESTILOS GENERALES  */
@@ -324,8 +326,68 @@ p {
 /* ESTILOS MARQUESINA MARQUEE */
 .layout__marquee {
   grid-area: marquee;
+
+  width: 100%;
+  height: 3.5rem;
+  min-height: 3.5rem;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  background-color: var(--color-bg-marquee);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
+.marquee__container {
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee__header {
+  position: relative;
+  z-index: 5;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-principal);
+  background-color: var(--color-secondary);
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.marquee__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10rem;
+}
+
+.marquee__item:first-child {
+  margin-left: 10rem;
+}
+
+.marquee__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.marquee__link {
+  color: var(--color-text-marquee);
+}
+
+.marquee__link:hover {
+  color: var(--color-secondary);
+}
+
+.marquee__link:before {
+  content: "+ ";
+  color: var(--color-secondary);
+}
 /* ESTILOS SLIDER */
 .layout__slider {
   grid-area: slider;
